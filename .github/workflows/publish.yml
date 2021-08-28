@@ -89,7 +89,8 @@ jobs:
         with:
           tag_name: ${{ steps.get-version.outputs.version }}
           release_name: ${{ steps.commit.outputs.title }}
-          body: ${{ steps.commit.outputs.body }}
+          body: |
+            ${{ steps.commit.outputs.body }}
   font:
     name: Trigger simple-icons-font release
     needs: npm
